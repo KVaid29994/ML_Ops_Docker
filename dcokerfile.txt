@@ -1,0 +1,38 @@
+A Dockerfile is a text file that contains instructions to build a Docker image — essentially a blueprint for 
+creating a containerized environment. 
+
+It defines things like:
+--> The base image (e.g., Python, Ubuntu)
+--> Dependencies (libraries, tools)
+--> Commands to run (e.g., installing packages, running scripts)
+--> Working directories and exposed ports
+
+🔹 How to Create a Dockerfile (Step-by-Step)
+1. Create a new file named Dockerfile (no extension) in your project root
+2. Add basic Dockerfile instructions. Example for a Python project:
+        -- # Use a base Python image
+             FROM python:3.10-slim
+        -- # Set the working directory
+             WORKDIR /app
+        -- # Copy local code to the container
+             COPY . .
+        -- # Install dependencies
+             RUN pip install --no-cache-dir -r requirements.txt
+        -- # Set the default command
+             CMD ["python", "main.py"]
+
+3. Build the Docker image: 
+        # docker build -t my-python-app .
+
+4. Run the Docker container:
+        - docker run -it my-python-app
+
+5. Common docker Commands
+| Command   | Description                                     |
+| --------- | ----------------------------------------------- |
+| `FROM`    | Base image to use                               |
+| `WORKDIR` | Sets the working directory inside the container |
+| `COPY`    | Copies files from host to container             |
+| `RUN`     | Runs shell commands during build                |
+| `CMD`     | Default command to run when container starts    |
+| `EXPOSE`  | Documents the port the container listens on     |
