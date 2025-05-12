@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.8-slim
+FROM python:3.11-slim
 
 ## Uses a lightweight Python 3.8 image (called slim) from Docker Hub as the starting point. It’s smaller in size, so faster to build and deploy.
 

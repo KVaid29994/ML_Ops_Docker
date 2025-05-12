@@ -36,3 +36,67 @@ It defines things like:
 | `RUN`     | Runs shell commands during build                |
 | `CMD`     | Default command to run when container starts    |
 | `EXPOSE`  | Documents the port the container listens on     |
+
+
+
+🔹 Image
+A Docker image is a read-only template used to create containers.
+It includes the app code, runtime, libraries, dependencies, and configuration.
+Think of it like a snapshot or a blueprint.
+🧠 Analogy: Like a software installer (.exe or .apk), but for containers.
+
+
+🔹 Container
+A container is a running instance of an image.
+It's isolated from the host system and other containers.
+You can have multiple containers from the same image.
+🧠 Analogy: If an image is a blueprint, a container is the building made from it.
+
+
+🔹 Dockerfile
+A Dockerfile is a script with instructions to build an image.
+It defines base image, install steps, copy files, etc.
+🧠 Analogy: Like a recipe for baking a cake.
+
+🔹 Build
+The build process reads the Dockerfile and creates an image.
+Command: docker build -t image-name .
+
+🔹 Volume
+A volume is used for persistent data storage in Docker.
+Data inside containers is lost when they stop unless stored in a volume.
+🧠 Analogy: Like an external hard drive for your container.
+
+🔹 Network
+Docker creates virtual networks to allow communication between containers or with the outside world.
+🧠 Analogy: Like a private LAN for your containers.
+
+🔹 Registry
+A registry is where Docker images are stored and shared.
+Public: Docker Hub; Private: Self-hosted registries.
+
+🔹 Docker Compose
+A tool to define and run multi-container applications using a docker-compose.yml file.
+🧠 Analogy: Like an orchestra conductor managing multiple instruments (containers).
+
+
+Even though your Dockerfile has EXPOSE 5000, that's just documentation.
+
+You must explicitly publish the port when running the container:
+docker run -p 5000:5000 your-image-name
+This maps port 5000 on the host to port 5000 inside the container.
+
+
+docker run -p 5000:5000 mlops-docker-demo
+
+
+11. Docker tags
+
+In Docker, tags are labels used to identify different versions of a Docker image. 
+They let you specify which version of an image you want to use or pull from a registry like Docker Hub.
+
+docker tag mlops-docker-demo kvaid29994/mlops-docker-demo:latest
+### no space between : and name
+
+
+***** docker push kvaid29994/mlpops-dockermlops-docker-demo:latest**
