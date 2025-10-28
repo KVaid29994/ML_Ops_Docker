@@ -1,0 +1,8 @@
+FROM python
+
+WORKDIR /MYAPP
+
+COPY ./username.py .
+
+CMD ["python" , "username.py"]
+
