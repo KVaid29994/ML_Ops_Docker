@@ -1,1 +1,8 @@
 FROM python
+
+WORKDIR /myapp
+
+COPY  ./read.py .
+COPY ./server.txt .
+
+CMD ["python", "read.py"]
