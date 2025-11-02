@@ -1,6 +1,6 @@
 FROM python
 
-WORKDIR /MYAPP
+WORKDIR /myapp
 
 COPY ./username.py .
 
